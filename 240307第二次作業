@@ -1,0 +1,20 @@
+r=float(input('請輸入半徑'))
+print('圓面積為:',3.14*r*r)
+print('圓周長為:',3.14*2*r)
+dict={'name': input('請輸入你的名字:'),
+     'year': input('請輸入你的年齡:'),
+    'height':input('請輸入你的身高(公尺):'),
+     'color':input('喜愛的顏色:') }
+print(dict['name'])
+print(dict['year'])
+print(dict['height'])
+print(dict['color'])
+
+a=float(input('請輸入一個整數:'))
+if (a*10)%10==0:
+    if a%2==0:
+        print('他是偶數')
+    else:
+        print('他是奇數')
+else:
+    print('你輸入的不是整數')
