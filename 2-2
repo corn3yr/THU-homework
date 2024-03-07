@@ -1,0 +1,41 @@
+database ={'name': "jack",
+     'year': 12,
+    'height': 170,
+     'color': "blue" }
+
+def serach(database):
+    header = "=" * 15 + "{:^20}"  + "=" * 15 
+    alert = "!" * 10 + "{:^30}"  + "!" * 10
+    def show_option(database):
+        print_string = [header.format("Option List")]
+        i = 0
+        for key in database.keys():
+            print_string.append("\t[{:}]  {:}".format(i, key))
+            i += 1
+        print("\n".join(print_string), end = "")
+    def get_option():
+        option_string = input('Please input the index which you want to search:')
+        option_string = option_string.split(" ")
+        try:
+            option_list = [int(option) for option in option_string]
+        except:
+            print("Please input int!")
+            option_string = input('Please input the index which you want to search:')
+            option_list = [int(option) for option in option_string]
+        return option_list
+    def search_by_option(option_list):
+        return [list(database.items())[option] for option in option_list]
+    def show_result(result):
+        print_string = header.format("Result List")
+        i = 0
+        for key, value in result:
+            print_string += "\t[{:}]  {:}  {:}\n".format(i, key, value)
+            i += 1
+        print(print_string)        
+    show_option(database)
+    show_result(search_by_option(get_option()))
+    
+    
+    
+
+serach(database)
